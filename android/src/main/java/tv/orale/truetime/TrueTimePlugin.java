@@ -37,6 +37,7 @@ public class TrueTimePlugin implements MethodCallHandler {
                     throw new IllegalArgumentException("Map argument expected");
                 }
                 TrueTimeRx.build()
+                        .withSharedPreferences(this)
                         .withConnectionTimeout((int) call.argument("timeout"))
                         .withRetryCount((int) call.argument("retryCount"))
                         .withLoggingEnabled((Boolean) call.argument("logging"))
